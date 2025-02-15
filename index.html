@@ -55,6 +55,11 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .tajmahal {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
     </style>
     <script>
         function showForm(packageType) {
@@ -66,10 +71,11 @@
             let name = document.getElementById("name").value;
             let location = document.getElementById("location").value;
             let people = document.getElementById("people").value;
+            let contactMethod = document.getElementById("contactMethod").value;
             let paymentMode = document.getElementById("paymentMode").value;
             let packageType = document.getElementById("packageType").value;
             
-            let mailtoLink = `mailto:mashakhan.2007@gmail.com?subject=New Order&body=Name: ${name}%0D%0AFrom: ${location}%0D%0AGroup Size: ${people}%0D%0APayment Mode: ${paymentMode}%0D%0APackage: ${packageType}`;
+            let mailtoLink = `mailto:mujeevphoto7@gmail.com?subject=New Order&body=Name: ${name}%0D%0AFrom: ${location}%0D%0AGroup Size: ${people}%0D%0AContact Method: ${contactMethod}%0D%0APayment Mode: ${paymentMode}%0D%0APackage: ${packageType}`;
             window.location.href = mailtoLink;
         }
     </script>
@@ -77,10 +83,11 @@
 <body>
     <div class="container">
         <h1>Mujeev Khan Photographer</h1>
-        <h3>Capture Your Perfect Moments at the Taj Mahal!</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Taj_Mahal_%28Edited%29.jpg" alt="Taj Mahal" class="tajmahal">
+        <h3>📷 Capture Your Perfect Moments at the Taj Mahal!</h3>
         <p>With 15+ years of experience, Mohd Mujeev offers professional photography services at the Taj Mahal. We provide high-quality images that preserve your special memories forever.</p>
         
-        <h2>Photography Packages</h2>
+        <h2>📸 Photography Packages</h2>
         <div class="package">
             <p>📸 100 Photos with Pendrive - ₹4000</p>
             <button class="buy-btn" onclick="showForm('100 Photos with Pendrive - ₹4000')">Buy Now</button>
@@ -95,11 +102,12 @@
         </div>
         
         <div id="orderForm" class="form-container">
-            <h2>Place Your Order</h2>
+            <h2>📝 Place Your Order</h2>
             <form onsubmit="sendEmail(event)">
                 <input type="text" id="name" placeholder="Your Name" required>
-                <input type="text" id="location" placeholder="Your Location" required>
+                <input type="text" id="location" placeholder="Your Country" required>
                 <input type="number" id="people" placeholder="How Many People?" required>
+                <input type="text" id="contactMethod" placeholder="Preferred Contact Method (Phone, Email, WhatsApp)" required>
                 <select id="paymentMode" required>
                     <option value="UPI">UPI</option>
                     <option value="Cash">Cash</option>
@@ -110,7 +118,7 @@
             </form>
         </div>
         
-        <h2>Contact Information</h2>
+        <h2>📞 Contact Information</h2>
         <p>📞 Phone: +91 931918967 / +91 8439093807</p>
         <p>📧 Email: khan.mugeev@gmail.com</p>
         
