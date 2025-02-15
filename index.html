@@ -33,7 +33,6 @@
             cursor: pointer;
         }
         .form-container {
-            display: none;
             background: white;
             color: black;
             padding: 20px;
@@ -55,70 +54,51 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .tajmahal {
+        .tajmahal-img {
             width: 100%;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-top: 10px;
         }
     </style>
-    <script>
-        function showForm(packageType) {
-            document.getElementById("orderForm").style.display = "block";
-            document.getElementById("packageType").value = packageType;
-        }
-        function sendEmail(event) {
-            event.preventDefault();
-            let name = document.getElementById("name").value;
-            let location = document.getElementById("location").value;
-            let people = document.getElementById("people").value;
-            let contactMethod = document.getElementById("contactMethod").value;
-            let paymentMode = document.getElementById("paymentMode").value;
-            let packageType = document.getElementById("packageType").value;
-            
-            let mailtoLink = `mailto:mujeevphoto7@gmail.com?subject=New Order&body=Name: ${name}%0D%0AFrom: ${location}%0D%0AGroup Size: ${people}%0D%0AContact Method: ${contactMethod}%0D%0APayment Mode: ${paymentMode}%0D%0APackage: ${packageType}`;
-            window.location.href = mailtoLink;
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <h1>Mujeev Khan Photographer</h1>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Taj_Mahal_%28Edited%29.jpg" alt="Taj Mahal" class="tajmahal">
-        <h3>📷 Capture Your Perfect Moments at the Taj Mahal!</h3>
+        <h3>Capture Your Perfect Moments at the Taj Mahal!</h3>
         <p>With 15+ years of experience, Mohd Mujeev offers professional photography services at the Taj Mahal. We provide high-quality images that preserve your special memories forever.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Taj_Mahal%2C_Agra%2C_India_edit3.jpg" alt="Taj Mahal" class="tajmahal-img">
         
-        <h2>📸 Photography Packages</h2>
+        <h2>Photography Packages</h2>
         <div class="package">
             <p>📸 100 Photos with Pendrive - ₹4000</p>
-            <button class="buy-btn" onclick="showForm('100 Photos with Pendrive - ₹4000')">Buy Now</button>
+            <button class="buy-btn" onclick="document.getElementById('orderForm').style.display='block'">Buy Now</button>
         </div>
         <div class="package">
             <p>📸 200 Photos with Pendrive - ₹7000</p>
-            <button class="buy-btn" onclick="showForm('200 Photos with Pendrive - ₹7000')">Buy Now</button>
+            <button class="buy-btn" onclick="document.getElementById('orderForm').style.display='block'">Buy Now</button>
         </div>
         <div class="package">
             <p>📸 300 Photos with Pendrive - ₹12,000</p>
-            <button class="buy-btn" onclick="showForm('300 Photos with Pendrive - ₹12,000')">Buy Now</button>
+            <button class="buy-btn" onclick="document.getElementById('orderForm').style.display='block'">Buy Now</button>
         </div>
         
-        <div id="orderForm" class="form-container">
-            <h2>📝 Place Your Order</h2>
-            <form onsubmit="sendEmail(event)">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="text" id="location" placeholder="Your Country" required>
-                <input type="number" id="people" placeholder="How Many People?" required>
-                <input type="text" id="contactMethod" placeholder="Preferred Contact Method (Phone, Email, WhatsApp)" required>
-                <select id="paymentMode" required>
+        <div id="orderForm" class="form-container" style="display: none;">
+            <h2>Place Your Order</h2>
+            <form action="https://formsubmit.co/mujeevphoto7@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" name="location" placeholder="Your Country" required>
+                <input type="number" name="people" placeholder="How Many People?" required>
+                <input type="text" name="contactMethod" placeholder="Preferred Contact Method (Phone, Email, WhatsApp)" required>
+                <select name="paymentMode" required>
                     <option value="UPI">UPI</option>
                     <option value="Cash">Cash</option>
                     <option value="Bank Transfer">Bank Transfer</option>
                 </select>
-                <input type="hidden" id="packageType">
                 <button type="submit">Submit Order</button>
             </form>
         </div>
         
-        <h2>📞 Contact Information</h2>
+        <h2>Contact Information</h2>
         <p>📞 Phone: +91 931918967 / +91 8439093807</p>
         <p>📧 Email: khan.mugeev@gmail.com</p>
         
