@@ -5,78 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mujeev Khan Photographer</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; background: linear-gradient(to bottom, #8e44ad, #2c3e50); color: white; }
-        header { background-color: #222; padding: 20px; font-size: 28px; font-weight: bold; }
-        .container { padding: 20px; }
-        .pricing-table { width: 80%; margin: 20px auto; border-collapse: collapse; }
-        .pricing-table th, .pricing-table td { border: 1px solid #ddd; padding: 15px; text-align: center; background-color: rgba(255, 255, 255, 0.1); }
-        .pricing-table th { background-color: #444; }
-        .contact-info { margin: 20px 0; font-size: 18px; }
-        .warning { color: yellow; font-weight: bold; }
-        .buy-button { background-color: gold; color: black; padding: 10px 15px; border: none; cursor: pointer; font-size: 16px; }
-        .buy-button:hover { background-color: orange; }
-        .review-section { background-color: rgba(255, 255, 255, 0.1); padding: 20px; margin-top: 30px; }
-        .review { border-bottom: 1px solid #ddd; padding: 10px; }
-        .stars { color: gold; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .package {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+        .buy-btn {
+            background: gold;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header>Mujeev Khan Photographer</header>
     <div class="container">
-        <img src="tajmahal.jpg" alt="Taj Mahal" width="100%">
-        <h2>Capture Your Perfect Moments at the Taj Mahal!</h2>
-        <p>With 15+ years of experience, Mohd Mujeev offers professional photography services at the Taj Mahal.</p>
-        <p>We provide high-quality images that preserve your special memories forever. Each package is designed to give you the best experience with high-quality images and premium service.</p>
+        <h1>Mujeev Khan Photographer</h1>
+        <h3>Capture Your Perfect Moments at the Taj Mahal!</h3>
+        <p>With 15+ years of experience, Mohd Mujeev offers professional photography services at the Taj Mahal. We provide high-quality images that preserve your special memories forever.</p>
         
-        <h3>Our Packages</h3>
-        <table class="pricing-table">
-            <tr>
-                <th>Package</th>
-                <th>Details</th>
-                <th>Price (INR)</th>
-                <th>Buy</th>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>100 Photos + Pendrive</td>
-                <td>₹4000</td>
-                <td><button class="buy-button" onclick="window.location.href='https://wa.me/931918967'">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td>Standard</td>
-                <td>200 Photos + Pendrive</td>
-                <td>₹7000</td>
-                <td><button class="buy-button" onclick="window.location.href='https://wa.me/931918967'">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td>Premium</td>
-                <td>300 Photos + Pendrive</td>
-                <td>₹12,000</td>
-                <td><button class="buy-button" onclick="window.location.href='https://wa.me/931918967'">Buy Now</button></td>
-            </tr>
-        </table>
+        <h2>Photography Packages</h2>
+        <div class="package">
+            <p>📸 100 Photos with Pendrive - ₹4000</p>
+            <button class="buy-btn" onclick="window.location.href='https://wa.me/+91931918967'">Buy Now</button>
+        </div>
+        <div class="package">
+            <p>📸 200 Photos with Pendrive - ₹7000</p>
+            <button class="buy-btn" onclick="window.location.href='https://wa.me/+918439093807'">Buy Now</button>
+        </div>
+        <div class="package">
+            <p>📸 300 Photos with Pendrive - ₹12,000</p>
+            <button class="buy-btn" onclick="window.location.href='https://wa.me/+91931918967'">Buy Now</button>
+        </div>
         
-        <h3>Contact Us</h3>
-        <p class="contact-info">
-            Phone: <b>931918967 / 8439093807</b> <br>
-            Email: <b>khan.mugeev@gmail.com</b>
-        </p>
+        <h2>Contact Information</h2>
+        <p>📞 Phone: +91 931918967 / +91 8439093807</p>
+        <p>📧 Email: khan.mugeev@gmail.com</p>
         
-        <p class="warning">⚠️ Beware of fraud! For verification, contact us directly.</p>
-    </div>
-    
-    <div class="review-section">
-        <h3>Customer Reviews</h3>
-        <div class="review"><p>"Amazing photography! Captured every moment beautifully." <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Highly professional and friendly. Totally worth it!" <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Best photography experience at the Taj Mahal." <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Great quality pictures, delivered on time!" <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Affordable and top-notch service!" <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Fantastic experience, highly recommended!" <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Memories captured perfectly!" <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"The best photography service at the Taj Mahal." <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Great service, beautiful pictures!" <span class="stars">★★★★★</span></p></div>
-        <div class="review"><p>"Would definitely book again!" <span class="stars">★★★★★</span></p></div>
+        <h2>⚠️ Warning</h2>
+        <p>Be careful of fraud! For verification, contact us using the provided details.</p>
     </div>
 </body>
 </html>
