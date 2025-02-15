@@ -32,7 +32,47 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .form-container {
+            display: none;
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function showForm(packageType) {
+            document.getElementById("orderForm").style.display = "block";
+            document.getElementById("packageType").value = packageType;
+        }
+        function sendEmail(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let location = document.getElementById("location").value;
+            let people = document.getElementById("people").value;
+            let paymentMode = document.getElementById("paymentMode").value;
+            let packageType = document.getElementById("packageType").value;
+            
+            let mailtoLink = `mailto:mashakhan.2007@gmail.com?subject=New Order&body=Name: ${name}%0D%0AFrom: ${location}%0D%0AGroup Size: ${people}%0D%0APayment Mode: ${paymentMode}%0D%0APackage: ${packageType}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -43,15 +83,31 @@
         <h2>Photography Packages</h2>
         <div class="package">
             <p>📸 100 Photos with Pendrive - ₹4000</p>
-            <button class="buy-btn" onclick="window.location.href='https://wa.me/+91931918967'">Buy Now</button>
+            <button class="buy-btn" onclick="showForm('100 Photos with Pendrive - ₹4000')">Buy Now</button>
         </div>
         <div class="package">
             <p>📸 200 Photos with Pendrive - ₹7000</p>
-            <button class="buy-btn" onclick="window.location.href='https://wa.me/+918439093807'">Buy Now</button>
+            <button class="buy-btn" onclick="showForm('200 Photos with Pendrive - ₹7000')">Buy Now</button>
         </div>
         <div class="package">
             <p>📸 300 Photos with Pendrive - ₹12,000</p>
-            <button class="buy-btn" onclick="window.location.href='https://wa.me/+91931918967'">Buy Now</button>
+            <button class="buy-btn" onclick="showForm('300 Photos with Pendrive - ₹12,000')">Buy Now</button>
+        </div>
+        
+        <div id="orderForm" class="form-container">
+            <h2>Place Your Order</h2>
+            <form onsubmit="sendEmail(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="text" id="location" placeholder="Your Location" required>
+                <input type="number" id="people" placeholder="How Many People?" required>
+                <select id="paymentMode" required>
+                    <option value="UPI">UPI</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+                <input type="hidden" id="packageType">
+                <button type="submit">Submit Order</button>
+            </form>
         </div>
         
         <h2>Contact Information</h2>
